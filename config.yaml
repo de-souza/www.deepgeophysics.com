@@ -1,0 +1,68 @@
+baseURL: https://www.deepgeophysics.com
+title: Deep Geophysics
+languageCode: en-us
+theme: hugo-flex
+rssLimit: 10
+preserveTaxonomyNames: true
+pygmentsUseClasses: true
+
+copyright: >-
+  Copyright © 2020 Léo De Souza – Except where otherwise noted, content on this
+  site is licensed under a Creative Commons Attribution 4.0 International
+  License (http://creativecommons.org/licenses/by/4.0/).
+
+params:
+  width: 50rem
+  footer: >-
+    Copyright © 2020 &#32; <a href="/contact/" rel="author">Léo De Souza</a> –
+    Except where otherwise noted, content on this site is licensed under a &#32;
+    <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative
+    Commons Attribution 4.0 International License</a>.
+  netlify:
+    honeypot: true
+  css:
+  - css/katex.css
+  - css/syntax.css
+  js:
+  - js/katex.js
+  - js/katex-codeblocks.js
+
+menu:
+  nav:
+  - name: About
+    url: about/
+    weight: 1
+  - name: Archive
+    url: archive/
+    weight: 2
+  - name: Tags
+    url: tags/
+    weight: 3
+  - name: RSS
+    url: index.xml
+    weight: 4
+
+taxonomies:
+  tag: tags
+
+outputs:
+  section:
+  - html
+  taxonomy:
+  - html
+  term:
+  - html
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true

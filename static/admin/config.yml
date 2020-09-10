@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+
+publish_mode: editorial_workflow
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: content/posts
+    filter: {field: type, value: posts}
+    create: true
+    preview_path: posts/{{slug}}
+    fields:
+      - {name: title, label: Title, widget: string}
+      - {name: date, label: Date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ"}
+      - {name: body, label: Body, widget: markdown}
+      - {name: tags, label: Tags, widget: list, required: false}
+      - {name: type, label: Type, widget: hidden, default: posts}
+  - name: pages
+    label: Pages
+    label_singular: Page
+    files:
+      - file: content/about.md
+        name: about
+        label: About
+        preview_path: '{{slug}}'
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: body, label: Body, widget: markdown}
+      - file: content/posts/_index.md
+        name: archive
+        label: Archive
+        preview_path: 'posts/{{slug}}'
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: body, label: Body, widget: markdown, required: false}
+          - {name: url, label: URL, widget: hidden}
+      - file: content/tags/_index.md
+        name: tags
+        label: Tags
+        preview_path: 'tags/{{slug}}'
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: body, label: Body, widget: markdown, required: false}
+      - file: content/contact.md
+        name: contact
+        label: Contact
+        preview_path: '{{slug}}'
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: body, label: Content, widget: markdown, required: false}
+      - file: content/success.md
+        name: success
+        label: Success
+        preview_path: '{{slug}}'
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: body, label: Content, widget: markdown}

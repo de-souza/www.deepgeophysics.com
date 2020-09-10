@@ -1,0 +1,11 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: deny
+  X-XSS-Protection: 1; mode=block
+
+/admin
+  Content-Security-Policy: default-src https://www.netlifystatus.com 'self'; script-src https://identity.netlify.com https://unpkg.com 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: 'self'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: deny
+  X-XSS-Protection: 1; mode=block
